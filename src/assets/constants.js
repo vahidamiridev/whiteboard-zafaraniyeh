@@ -30,7 +30,7 @@ export const IDS = {
   withoutGrid: "withoutGrid",
   moveImage: "moveImage",
   insertImage: "insertImage",
-  saveImage: "saveCanvas",
+  saveImage: "saveImage",
 };
 
 export const drawToolsIds = [

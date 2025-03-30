@@ -1,3 +1,4 @@
+import { faYenSign } from "@fortawesome/free-solid-svg-icons";
 import {
   actionTypes,
   drawToolsIds,
@@ -301,3 +302,9 @@ export const gridHandlelr = (size, dataTask, configState) => {
   dataTask === IDS.xyGrid && gridXYFixing(size, configState);
   dataTask === IDS.withoutGrid && clearGrid(configState);
 };
+export const saveImageHandler = (configState) => {
+  const link = document.createElement('a') 
+  link.download = `${Date.now()}.jpg`
+  link.href = configState.canvas.toDataURL()
+  link.click() 
+}

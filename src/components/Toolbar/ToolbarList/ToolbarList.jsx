@@ -4,10 +4,11 @@ import {
   actionTypes,
   backgroundCanvasToolsIds,
   iconsInMainToolbar,
+  IDS,
 } from "../../../assets/constants";
 import { addDispatch } from "../../../utils/helper";
 import useAppDispatchContext from "../../../hooks/useAppDispatchContext";
-import { gridHandlelr } from "../../../utils/mainLogic";
+import { gridHandlelr, saveImageHandler } from "../../../utils/mainLogic";
 import useAppInitialStateContext from "../../../hooks/useAppInitialStateContext";
 import useAppStateContext from "../../../hooks/useAppStateContext";
 
@@ -20,6 +21,7 @@ export default function ToolbarList({ inputImageRef }) {
 
   const clickHandler = (e) => {
     if (e.target.tagName === "INPUT") {
+      e.target.id === IDS.saveImage && saveImageHandler(configState)
       e.target.type === "button" &&
         e.target.getAttribute("data-color") &&
         addDispatch(appDispatch, actionTypes.SET_COLOR_WITH_ID, {
