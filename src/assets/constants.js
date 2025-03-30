@@ -291,4 +291,3 @@ export const iconsInMainToolbar = [
 ];
 
 export const mainIconsId = iconsInMainToolbar.map((icon) => icon.id);
-
