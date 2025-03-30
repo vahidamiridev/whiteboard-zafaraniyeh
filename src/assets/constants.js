@@ -292,8 +292,3 @@ export const iconsInMainToolbar = [
 
 export const mainIconsId = iconsInMainToolbar.map((icon) => icon.id);
 
-// export const actionTypes = {
-//   SET_TOOL_ACTIVE_STATUS: 'SET_TOOL_ACTIVE_STATUS',
-//   RESET_TOOL_STATE: 'RESET_TOOL_STATE',
-//   SET_IMAGE_STATE: 'SET_IMAGE_STATE',
-// };
