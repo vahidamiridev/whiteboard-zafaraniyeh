@@ -10,7 +10,7 @@ export const actionTypes = {
   SET_WHITCH_TOOLS_SELECTED_WITH_ID: "SET_WHITCH_TOOLS_SELECTED_WITH_ID",
   SET_IS_DRAWING_FALSE: "SET_IS_DRAWING_FALSE",
   SET_IS_DRAWING_TRUE: "SET_IS_DRAWING_TRUE",
-};
+}as const;
 
 export const IDS = {
   firstPen: "firstPen",
@@ -31,7 +31,7 @@ export const IDS = {
   moveImage: "moveImage",
   insertImage: "insertImage",
   saveImage: "saveImage",
-};
+}as const
 
 export const drawToolsIds = [
   IDS.firstPen,
@@ -45,24 +45,40 @@ export const drawToolsIds = [
   IDS.circle,
   IDS.triAngle,
   IDS.rectAngle,
-]
+] as const
 export const shapsToolsIds = [
   IDS.straightLine,
   IDS.circle,
   IDS.triAngle,
   IDS.rectAngle,
-]
+]as const
 export const backgroundCanvasToolsIds = [
   IDS.withoutGrid,
   IDS.xGrid,
   IDS.yGrid,
   IDS.xyGrid,
-]
+]as const
 
+export interface SubMenuItem {
+  id: string;
+  type: "button" | "color" | "range" | "file" | "checkbox" 
+  dataColor?: string;
+  pathIcon?: string;
+  nameIcon?: string;
+  dataTask?: string;
+  nameINput?: string;
+}
 
+export interface ToolbarItem {
+  id: string;
+  name: string;
+  type: "checkbox" | "button" | "file";
+  dataAction: string;
+  hasSubMenu: boolean;
+  subMenuItems?: SubMenuItem[]; 
+}
 
-
-export const iconsInMainToolbar = [
+export const iconsInMainToolbar: ToolbarItem[] = [
   {
     id: "firstPen",
     subMenuItems: [
@@ -290,4 +306,4 @@ export const iconsInMainToolbar = [
   },
 ];
 
-export const mainIconsId = iconsInMainToolbar.map((icon) => icon.id);
+

@@ -1,12 +1,28 @@
-import { createContext } from "react";
+import React, { createContext, ReactNode } from "react";
 import useAppReducer from "../hooks/useAppReducer";
 import useInitialConfigReducer from "../hooks/useInitialConfigReducer";
 
-export const AppDispatchContext = createContext();
-export const AppStateContext = createContext();
-export const AppInitialStateContext = createContext();
+interface AppContextProps {
+  children: ReactNode;
+}
+interface AppDispatchContextType {
 
-export const AppContextProvider = ({ children }) => {
+}
+interface AppStateContextType {
+
+}
+interface AppInitialStateContextType {
+
+}
+
+
+
+export const AppDispatchContext = createContext<AppDispatchContextType | undefined>(undefined);
+export const AppStateContext = createContext<AppStateContextType | undefined>(undefined);
+export const AppInitialStateContext = createContext<AppInitialStateContextType | undefined>(undefined);
+
+export const AppContextProvider:React.FC<AppContextProps> = ({ children }) => {
+  
   const [stateApp, dispatchApp] = useAppReducer();
   const [configState, dispatchConfigState] = useInitialConfigReducer();
 

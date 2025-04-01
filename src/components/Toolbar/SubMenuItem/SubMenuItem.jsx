@@ -53,7 +53,7 @@ export default function SubMenuItem({ subMenuItem }) {
         backgroundCanvasGridIds.includes(appState.whitchToolsSelected)
           ? gridHandlelr(
               e.target.value,
-              appState.whitchToolsSelected,
+              appState,
               configState
             )
           : e.target.type === "range" &&

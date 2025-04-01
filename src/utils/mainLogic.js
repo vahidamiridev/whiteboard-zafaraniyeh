@@ -1,21 +1,46 @@
-import { faYenSign } from "@fortawesome/free-solid-svg-icons";
-import {
-  actionTypes,
-  drawToolsIds,
-  IDS,
-  shapsToolsIds,
-} from "../assets/constants";
+import { actionTypes, drawToolsIds, IDS, shapsToolsIds, } from "../assets/constants";
 import { addDispatch } from "./helper";
 
+
+
+
+// export const getXYWhenTouched = (event) => {
+//   event.targetTouches &&  console.log( "touch : "  , event.targetTouches.length);
+//   const boundingClientRect = event.target.getBoundingClientRect();
+//   let x = event.targetTouches[0].pageX - boundingClientRect.left;
+//   let y = event.targetTouches[0].pageY - boundingClientRect.top;
+//   return {
+//     x,
+//     y,
+//   };
+// };
 export const getXYWhenTouched = (event) => {
-  const boundingClientRect = event.target.getBoundingClientRect();
-  let x = event.targetTouches[0].pageX - boundingClientRect.left;
-  let y = event.targetTouches[0].pageY - boundingClientRect.top;
+
+  if (event.targetTouches && event.targetTouches.length > 0) {
+    console.log("targetTouches length: ", event.targetTouches.length);
+    console.log("First touch: ", event.targetTouches[0]);
+
+    const boundingClientRect = event.target.getBoundingClientRect();
+    const x = event.targetTouches[0].pageX - boundingClientRect.left;
+    const y = event.targetTouches[0].pageY - boundingClientRect.top;
+
+    console.log("Touch coordinates:", { x, y });
+
+    return {
+      x,
+      y,
+    };
+  } else {
+    console.log("No touch detected or targetTouches is empty.");
+  }
+
   return {
-    x,
-    y,
+    x: 0,
+    y: 0,
   };
 };
+
+
 export const getCurrentCoordinates = (event) => {
   let currentX;
   let currentY;
@@ -170,8 +195,8 @@ export const startLeftClickOnCanvas = (
   prevMouseCoordsRef
 ) => {
   if (drawToolsIds.includes(appState.whitchToolsSelected)) {
-    configState.ctx.beginPath(); // //use this just for handel drawFreeHandLine
-    addDispatch(appDispatch, actionTypes.SET_IS_DRAWING_TRUE);
+    configState.ctx.beginPath(); // just for handel drawFreeHandLine
+    addDispatch(appDispatch, actionTypes.SET_IS_DRAWING_TRUE  );
     const { currentX, currentY } = getCurrentCoordinates(event);
 
     prevMouseCoordsRef.current = { x: currentX, y: currentY };
@@ -294,13 +319,14 @@ const clearGrid = (configState) => {
   const { bgCtx, canvasWidth, canvasHeight } = configState;
   bgCtx.clearRect(0, 0, canvasWidth, canvasHeight);
 };
-export const gridHandlelr = (size, dataTask, configState) => {
+export const gridHandlelr = (size, appState, configState) => {
   const { bgCtx  , canvasWidth , canvasHeight } = configState;
   bgCtx.clearRect(0, 0, canvasWidth, canvasHeight);
-  dataTask === IDS.xGrid && gridXFixing(size, configState);
-  dataTask === IDS.yGrid && gridYFixing(size, configState);
-  dataTask === IDS.xyGrid && gridXYFixing(size, configState);
-  dataTask === IDS.withoutGrid && clearGrid(configState);
+  appState.whitchToolsSelected === IDS.xGrid && gridXFixing(size, configState);
+  appState.whitchToolsSelected === IDS.yGrid && gridYFixing(size, configState);
+  appState.whitchToolsSelected === IDS.xyGrid && gridXYFixing(size, configState);
+  appState.whitchToolsSelected === IDS.withoutGrid && clearGrid(configState);
+  
 };
 export const saveImageHandler = (configState) => {
   const link = document.createElement('a') 

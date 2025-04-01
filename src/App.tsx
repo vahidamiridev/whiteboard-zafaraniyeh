@@ -8,14 +8,15 @@ import useAppInitialStateContext from "./hooks/useAppInitialStateContext";
 import useAppDispatchContext from "./hooks/useAppDispatchContext";
 import useAppStateContext from "./hooks/useAppStateContext";
 
-function App() {
-  const canvasRef = React.useRef(null);
-  const bgCanvasRef = React.useRef(null);
-  const inputImageRef = React.useRef(null);
+const App:React.FC = () => {
 
-  const { configState, dispatchConfigState } = useAppInitialStateContext();
-  const appDispatch = useAppDispatchContext();
+  const canvasRef = React.useRef<HTMLCanvasElement | null>(null)
+  const bgCanvasRef = React.useRef<HTMLCanvasElement | null>(null)
+  const inputImageRef = React.useRef<HTMLInputElement | null>(null)
+  
   const appState = useAppStateContext()
+  const { configState, dispatchConfigState } = useAppInitialStateContext();
+
 
   React.useEffect(() => {
     if (inputImageRef && canvasRef && bgCanvasRef) {
@@ -25,7 +26,7 @@ function App() {
         inputImageRef,
       });
     }
-  }, []);
+  }, [dispatchConfigState]);
 
   return (
     <Layout>

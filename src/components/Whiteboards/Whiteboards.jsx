@@ -24,6 +24,7 @@ export default function Whiteboards({ bgCanvasRef, canvasRef }) {
        $whitchToolsSelected = {appState.whitchToolsSelected}>
         <canvas
           onMouseDown={(event) => {
+
             startLeftClickOnCanvas(
               event,
               configState,
@@ -43,6 +44,7 @@ export default function Whiteboards({ bgCanvasRef, canvasRef }) {
           }
           onMouseUp={(event) =>mouseUpHandler(event , appDispatch)}
           onTouchStart={(event) => {
+
             startLeftClickOnCanvas(
               event,
               configState,
