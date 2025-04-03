@@ -59,33 +59,33 @@ export const backgroundCanvasToolsIds = [
   IDS.xyGrid,
 ]as const
 
-export interface SubMenuItem {
+export interface SubMenuItemType {
   id: string;
   type: "button" | "color" | "range" | "file" | "checkbox" 
   dataColor?: string;
   pathIcon?: string;
   nameIcon?: string;
   dataTask?: string;
-  nameINput?: string;
+
 }
 
-export interface ToolbarItem {
+export interface ToolbarItemType {
   id: string;
   name: string;
   type: "checkbox" | "button" | "file";
   dataAction: string;
   hasSubMenu: boolean;
-  subMenuItems?: SubMenuItem[]; 
+  subMenuItems?: SubMenuItemType[]; 
 }
 
-export const iconsInMainToolbar: ToolbarItem[] = [
+export const iconsInMainToolbar: ToolbarItemType[] = [
   {
     id: "firstPen",
     subMenuItems: [
       { id: "firstPen-subMenu-#0000FF", type: "button", dataColor: "#0000FF" },
       { id: "firstPen-subMenu-#008000", type: "button", dataColor: "#008000" },
       { id: "firstPen-subMenu-#FF0000", type: "button", dataColor: "#FF0000" },
-      { id: "firstPen-subMenu-#36454F", type: "button", dataColor: "#36454F" },
+      { id: "firstPen-subMenu-#000000", type: "button", dataColor: "#000000" },
       {
         id: "firstPen-subMenu-#FFFF00",
         type: "button",
@@ -96,7 +96,7 @@ export const iconsInMainToolbar: ToolbarItem[] = [
         type: "color",
         pathIcon: "../../public/shaps/triangleW.png",
       },
-      { id: "firstPen-subMenu-range", type: "range", nameINput: "range" },
+      { id: "firstPen-subMenu-range", type: "range"},
     ],
     hasSubMenu: true,
     dataAction: "UI",
@@ -109,7 +109,7 @@ export const iconsInMainToolbar: ToolbarItem[] = [
       { id: "secondPen-subMenu-#0000FF", type: "button", dataColor: "#0000FF" },
       { id: "secondPen-subMenu-#008000", type: "button", dataColor: "#008000" },
       { id: "secondPen-subMenu-#FF0000", type: "button", dataColor: "#FF0000" },
-      { id: "secondPen-subMenu-#36454F", type: "button", dataColor: "#36454F" },
+      { id: "secondPen-subMenu-#000000", type: "button", dataColor: "#000000" },
       {
         id: "secondPen-subMenu-#FFFF00",
         type: "button",
@@ -120,7 +120,7 @@ export const iconsInMainToolbar: ToolbarItem[] = [
         type: "color",
         nameIcon: "fa-pen",
       },
-      { id: "secondPen-subMenu-range", type: "range", nameINput: "range" },
+      { id: "secondPen-subMenu-range", type: "range",  },
     ],
     hasSubMenu: true,
     dataAction: "UI",
@@ -133,7 +133,7 @@ export const iconsInMainToolbar: ToolbarItem[] = [
       { id: "thirdPen-subMenu-#0000FF", type: "button", dataColor: "#0000FF" },
       { id: "thirdPen-subMenu-#008000", type: "button", dataColor: "#008000" },
       { id: "thirdPen-subMenu-#FF0000", type: "button", dataColor: "#FF0000" },
-      { id: "thirdPen-subMenu-#36454F", type: "button", dataColor: "#36454F" },
+      { id: "thirdPen-subMenu-#000000", type: "button", dataColor: "#000000" },
       {
         id: "thirdPen-subMenu-#FFFF00",
         type: "button",
@@ -144,7 +144,7 @@ export const iconsInMainToolbar: ToolbarItem[] = [
         type: "color",
         nameIcon: "fa-pen",
       },
-      { id: "thirdPen-subMenu-range", type: "range", nameINput: "range" },
+      { id: "thirdPen-subMenu-range", type: "range" },
     ],
     hasSubMenu: true,
     dataAction: "UI",
@@ -164,7 +164,7 @@ export const iconsInMainToolbar: ToolbarItem[] = [
       },
       { id: "highlighter-subMenu-#FFFF00", type: "button", dataColor: "#FFFF00" },
       { id: "highlighter-subMenu-setcolor", type: "color", nameIcon: "fa-pen" },
-      { id: "highlighter-subMenu-range", type: "range", nameINput: "range" },
+      { id: "highlighter-subMenu-range", type: "range"},
     ],
     hasSubMenu: true,
     dataAction: "UI",
@@ -174,7 +174,7 @@ export const iconsInMainToolbar: ToolbarItem[] = [
   {
     id: "eraser",
     subMenuItems: [
-      { id: "eraser-subMenu-size", type: "range", nameINput: "range" },
+      { id: "eraser-subMenu-size", type: "range"},
     ],
     hasSubMenu: true,
     dataAction: "UI",
@@ -187,7 +187,7 @@ export const iconsInMainToolbar: ToolbarItem[] = [
       { id: "shaps-subMenu-#0000FF", type: "button", dataColor: "#0000FF" },
       { id: "shaps-subMenu-#008000", type: "button", dataColor: "#008000" },
       { id: "shaps-subMenu-#FF0000", type: "button", dataColor: "#FF0000" },
-      { id: "shaps-subMenu-#36454F", type: "button", dataColor: "#36454F" },
+      { id: "shaps-subMenu-#000000", type: "button", dataColor: "#000000" },
       {
         id: "shaps-subMenu-#FFFF00",
         type: "button",
@@ -198,7 +198,7 @@ export const iconsInMainToolbar: ToolbarItem[] = [
         type: "color",
         nameIcon: "fa-pen",
       },
-      { id: "shaps-subMenu-range", type: "range", nameINput: "range" },
+      { id: "shaps-subMenu-range", type: "range" },
       {
         id: "shaps-subMenu-straightLine",
         type: "button",
@@ -218,7 +218,7 @@ export const iconsInMainToolbar: ToolbarItem[] = [
         dataTask: "circle",
       },
       {
-        id: "shaps-subMenu-triangle",
+        id: "shaps-subMenu-triAngle",
         type: "button",
         pathIcon: "../../public/shaps/triangleW.png",
         dataTask: "triangle",
@@ -274,8 +274,7 @@ export const iconsInMainToolbar: ToolbarItem[] = [
       },
       {
         id: "backgroundCanvas-subMenu-size",
-        type: "range",
-        nameINput: "range",
+        type: "range"
       },
     ],
     hasSubMenu: true,

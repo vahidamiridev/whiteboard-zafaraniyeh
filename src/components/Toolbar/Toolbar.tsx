@@ -1,8 +1,10 @@
 import React from "react";
 import { ToolbarStyled_section } from "./ToolbarStyled";
 import ToolbarList from "./ToolbarList/ToolbarList";
+import { JSX } from "react/jsx-runtime";
+import { ToolbarProps } from "interfaces/propsTyps";
 
-export default function Toolbar({inputImageRef}) {
+const   Toolbar:React.FC<ToolbarProps> =({inputImageRef}):JSX.Element => {
   return (
     <>
       <ToolbarStyled_section>
@@ -11,3 +13,4 @@ export default function Toolbar({inputImageRef}) {
     </>
   );
 }
+export default Toolbar

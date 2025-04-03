@@ -224,7 +224,7 @@ export const startLeftClickOnCanvas = (
       { snapshot }
     );
   }else{
-    throw new Error("reeor") 
+    throw new Error("whitchToolsSelected is not included member of drawToolsIds or configStat is not exist") 
   }
 };
 
@@ -332,13 +332,15 @@ const clearGrid = (configState : ConfigState) => {
   const { bgCtx, canvasWidth, canvasHeight } = configState;
   bgCtx?.clearRect(0, 0, +canvasWidth, +canvasHeight);
 };
-export const gridHandlelr = (size, appState:AppState, configState:ConfigState) => {
+export const gridHandlelr = (size : string, appState:AppState, configState:ConfigState) => {
+  console.log("gridHandlelr");
   const { bgCtx  , canvasWidth , canvasHeight } = configState;
   bgCtx?.clearRect(0, 0, +canvasWidth, +canvasHeight);
   appState.whitchToolsSelected === IDS.xGrid && gridXFixing(size, configState);
   appState.whitchToolsSelected === IDS.yGrid && gridYFixing(size, configState);
   appState.whitchToolsSelected === IDS.xyGrid && gridXYFixing(size, configState);
   appState.whitchToolsSelected === IDS.withoutGrid && clearGrid(configState);
+  
   
 };
 export const saveImageHandler = (configState:ConfigState) => {

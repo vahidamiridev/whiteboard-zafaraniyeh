@@ -1,6 +1,9 @@
 import styled from "styled-components";
+interface ItemOfSubMenuStyledPorps {
+  $pathIcon:string
+}
 
-export const ItemOfSubMenuStyled_input = styled.input`
+export const ItemOfSubMenuStyled_input = styled.input<ItemOfSubMenuStyledPorps>`
   display: block;
   width: ${(props) => (props.type === "range" ? "100%" : "1.3rem")};
   height: ${(props) => (props.type === "range" ? "1px" : "1.3rem")};

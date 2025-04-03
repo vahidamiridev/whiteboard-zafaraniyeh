@@ -58,7 +58,7 @@ export interface ToolsState {
   shaps: Tool;
   backgroundCanvas: {
     color: string;
-    size: number;
+    size: string;
     isActive: boolean;
   };
 }
@@ -93,8 +93,8 @@ export interface AppActions {
   type: keyof typeof actionTypes; 
   payload?: {
     id?: string;
-    color?: string;
-    size?: number | string;
+    color?: string ;
+    size?:  string;
     coordinates?: Position;
     isFilledShape?: boolean;
   }
@@ -110,3 +110,5 @@ export interface AppActions {
 }
 
 export type CursorIds = "firstPen" | "secondPen" | "thirdPen" | "highlighter" | "eraser"
+
+

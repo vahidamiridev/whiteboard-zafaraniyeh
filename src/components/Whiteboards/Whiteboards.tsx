@@ -1,4 +1,4 @@
-import {  useRef } from "react";
+import React, {  JSX, useRef } from "react";
 import {WhiteboardsStyled_div } from "./WhiteboardsStyled";
 import useAppStateContext from "../../hooks/useAppStateContext";
 import {
@@ -9,13 +9,20 @@ import {
 import useAppDispatchContext from "../../hooks/useAppDispatchContext";
 import useAppInitialStateContext from "../../hooks/useAppInitialStateContext";
 import { CursorIds } from "interfaces";
+export interface  WhiteboardsProps{
+  bgCanvasRef : React.RefObject<HTMLCanvasElement |null>;
+  canvasRef : React.RefObject<HTMLCanvasElement |null>;
+}
 
-export default function Whiteboards({ bgCanvasRef, canvasRef }) {
+const Whiteboards :React.FC<WhiteboardsProps> = ({ bgCanvasRef, canvasRef }) : JSX.Element=> {
 
   const prevMouseCoordsRef = useRef({ x: 0, y: 0 }); //use this just for handel drawFreeHandLine
   const { configState, dispatchConfigState } = useAppInitialStateContext();
   const appState = useAppStateContext();
   const appDispatch = useAppDispatchContext();
+
+
+
 
   return (
     <>
@@ -73,3 +80,4 @@ export default function Whiteboards({ bgCanvasRef, canvasRef }) {
     </>
   );
 }
+export default Whiteboards;
