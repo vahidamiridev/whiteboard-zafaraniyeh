@@ -21,7 +21,7 @@ export const IDS = {
   shaps: "shaps",
   straightLine: "straightLine",
   circle: "circle",
-  triAngle: "triangle",
+  triAngle: "triAngle",
   rectAngle: "rectAngle",
   backgroundCanvas: "backgroundCanvas",
   xGrid: "xGrid",
@@ -82,14 +82,14 @@ export const iconsInMainToolbar: ToolbarItem[] = [
   {
     id: "firstPen",
     subMenuItems: [
-      { id: "firstPen-subMenu-blue", type: "button", dataColor: "blue" },
-      { id: "firstPen-subMenu-green", type: "button", dataColor: "green" },
-      { id: "firstPen-subMenu-red", type: "button", dataColor: "red" },
-      { id: "firstPen-subMenu-#e3e3e3", type: "button", dataColor: "#e3e3e3" },
+      { id: "firstPen-subMenu-#0000FF", type: "button", dataColor: "#0000FF" },
+      { id: "firstPen-subMenu-#008000", type: "button", dataColor: "#008000" },
+      { id: "firstPen-subMenu-#FF0000", type: "button", dataColor: "#FF0000" },
+      { id: "firstPen-subMenu-#36454F", type: "button", dataColor: "#36454F" },
       {
-        id: "firstPen-subMenu-gold",
+        id: "firstPen-subMenu-#FFFF00",
         type: "button",
-        dataColor: "gold",
+        dataColor: "#FFFF00",
       },
       {
         id: "firstPen-subMenu-setcolor",
@@ -106,14 +106,14 @@ export const iconsInMainToolbar: ToolbarItem[] = [
   {
     id: "secondPen",
     subMenuItems: [
-      { id: "secondPen-subMenu-blue", type: "button", dataColor: "blue" },
-      { id: "secondPen-subMenu-green", type: "button", dataColor: "green" },
-      { id: "secondPen-subMenu-red", type: "button", dataColor: "red" },
-      { id: "secondPen-subMenu-#e3e3e3", type: "button", dataColor: "#e3e3e3" },
+      { id: "secondPen-subMenu-#0000FF", type: "button", dataColor: "#0000FF" },
+      { id: "secondPen-subMenu-#008000", type: "button", dataColor: "#008000" },
+      { id: "secondPen-subMenu-#FF0000", type: "button", dataColor: "#FF0000" },
+      { id: "secondPen-subMenu-#36454F", type: "button", dataColor: "#36454F" },
       {
-        id: "secondPen-subMenu-gold",
+        id: "secondPen-subMenu-#FFFF00",
         type: "button",
-        dataColor: "gold",
+        dataColor: "#FFFF00",
       },
       {
         id: "secondPen-subMenu-setcolor",
@@ -130,14 +130,14 @@ export const iconsInMainToolbar: ToolbarItem[] = [
   {
     id: "thirdPen",
     subMenuItems: [
-      { id: "thirdPen-subMenu-blue", type: "button", dataColor: "blue" },
-      { id: "thirdPen-subMenu-green", type: "button", dataColor: "green" },
-      { id: "thirdPen-subMenu-red", type: "button", dataColor: "red" },
-      { id: "thirdPen-subMenu-#e3e3e3", type: "button", dataColor: "#e3e3e3" },
+      { id: "thirdPen-subMenu-#0000FF", type: "button", dataColor: "#0000FF" },
+      { id: "thirdPen-subMenu-#008000", type: "button", dataColor: "#008000" },
+      { id: "thirdPen-subMenu-#FF0000", type: "button", dataColor: "#FF0000" },
+      { id: "thirdPen-subMenu-#36454F", type: "button", dataColor: "#36454F" },
       {
-        id: "thirdPen-subMenu-gold",
+        id: "thirdPen-subMenu-#FFFF00",
         type: "button",
-        dataColor: "gold",
+        dataColor: "#FFFF00",
       },
       {
         id: "thirdPen-subMenu-setcolor",
@@ -154,15 +154,15 @@ export const iconsInMainToolbar: ToolbarItem[] = [
   {
     id: "highlighter",
     subMenuItems: [
-      { id: "highlighter-subMenu-blue", type: "button", dataColor: "blue" },
-      { id: "highlighter-subMenu-green", type: "button", dataColor: "green" },
-      { id: "highlighter-subMenu-red", type: "button", dataColor: "red" },
+      { id: "highlighter-subMenu-#0000FF", type: "button", dataColor: "#0000FF" },
+      { id: "highlighter-subMenu-#008000", type: "button", dataColor: "#008000" },
+      { id: "highlighter-subMenu-#FF0000", type: "button", dataColor: "#FF0000" },
       {
-        id: "highlighter-subMenu-#e3e3e3",
+        id: "highlighter-subMenu-#36454F",
         type: "button",
-        dataColor: "#e3e3e3",
+        dataColor: "#36454F",
       },
-      { id: "highlighter-subMenu-gold", type: "button", dataColor: "gold" },
+      { id: "highlighter-subMenu-#FFFF00", type: "button", dataColor: "#FFFF00" },
       { id: "highlighter-subMenu-setcolor", type: "color", nameIcon: "fa-pen" },
       { id: "highlighter-subMenu-range", type: "range", nameINput: "range" },
     ],
@@ -184,14 +184,14 @@ export const iconsInMainToolbar: ToolbarItem[] = [
   {
     id: "shaps",
     subMenuItems: [
-      { id: "shaps-subMenu-blue", type: "button", dataColor: "blue" },
-      { id: "shaps-subMenu-green", type: "button", dataColor: "green" },
-      { id: "shaps-subMenu-red", type: "button", dataColor: "red" },
-      { id: "shaps-subMenu-#e3e3e3", type: "button", dataColor: "#e3e3e3" },
+      { id: "shaps-subMenu-#0000FF", type: "button", dataColor: "#0000FF" },
+      { id: "shaps-subMenu-#008000", type: "button", dataColor: "#008000" },
+      { id: "shaps-subMenu-#FF0000", type: "button", dataColor: "#FF0000" },
+      { id: "shaps-subMenu-#36454F", type: "button", dataColor: "#36454F" },
       {
-        id: "shaps-subMenu-gold",
+        id: "shaps-subMenu-#FFFF00",
         type: "button",
-        dataColor: "gold",
+        dataColor: "#FFFF00",
       },
       {
         id: "shaps-subMenu-setcolor",
@@ -234,19 +234,19 @@ export const iconsInMainToolbar: ToolbarItem[] = [
     id: "backgroundCanvas",
     subMenuItems: [
       {
-        id: "backgroundCanvas-subMenu-black",
+        id: "backgroundCanvas-subMenu-#36454F",
         type: "button",
-        dataColor: "#272727",
+        dataColor: "#36454F",
       },
       {
-        id: "backgroundCanvas-subMenu-darkgreen",
+        id: "backgroundCanvas-subMenu-#074205",
         type: "button",
-        dataColor: "darkgreen",
+        dataColor: "#074205",
       },
       {
-        id: "backgroundCanvas-subMenu-#e3e3e3",
+        id: "backgroundCanvas-subMenu-#efefef",
         type: "button",
-        dataColor: "#e3e3e3",
+        dataColor: "#efefef",
       },
       {
         id: "backgroundCanvas-subMenu-withoutGrid",

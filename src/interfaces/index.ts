@@ -2,42 +2,39 @@ import { actionTypes, IDS, shapsToolsIds } from "assets/constants";
 
 
 
-export type ActionType =
+export type ConfigAction =
   | { 
       type: typeof actionTypes.INITIAL_CONFIG_STATES; 
       payload: { 
-        canvasRef: React.RefObject<HTMLCanvasElement>; 
-        bgCanvasRef: React.RefObject<HTMLCanvasElement>; 
-        inputImageRef: React.RefObject<HTMLImageElement>; 
+        canvasRef: React.RefObject<HTMLCanvasElement |null>; 
+        bgCanvasRef: React.RefObject<HTMLCanvasElement |null>; 
+        inputImageRef: React.RefObject<HTMLInputElement |null>; 
       } 
     }
-  | { 
+ export interface SnapShotAction{ 
       type: typeof actionTypes.SET_SNAPSHPT_WITH_CTX_AND_CANVAS_WIDTH_HEIGHT; 
       payload: { snapshot: ImageData } 
     };
 
 
-export interface AppInitialStateContextType {
+export interface ConfigState {
   canvas: HTMLCanvasElement | null;
   ctx: CanvasRenderingContext2D | null;
   bgCanvas: HTMLCanvasElement | null;
   bgCtx: CanvasRenderingContext2D | null;
-  inputImage: HTMLImageElement | null;
+  inputImage: HTMLInputElement | null;
   canvasWidth: string;
   canvasHeight: string;
   snapShot: ImageData | Record<string, unknown>;
 }
 
+///////////////////////////////////////////////////////////////////////////////
 
-
-//-----------------------------------------------------------------------------------------------
-// اینترفیس برای موقعیت (Position)
 export interface Position {
   x: number | string;
   y: number | string;
 }
 
-// اینترفیس برای هر ابزار (Tool)
 export interface Tool {
   color: string;
   size: number;
@@ -47,7 +44,6 @@ export interface Tool {
   mouseUpPosition: Position;
 }
 
-// اینترفیس برای وضعیت ابزارها (ToolsState)
 export interface ToolsState {
   firstPen: Tool;
   secondPen: Tool;
@@ -67,9 +63,8 @@ export interface ToolsState {
   };
 }
 
-// اینترفیس برای وضعیت تصویر (ImageState)
 export interface ImageState {
-  image: any[]; // نوع تصویر باید بر اساس نیاز تغییر کند
+  image: any[];
   isActive: boolean;
   isLoading: boolean;
   mouseDownPosition: Position;
@@ -80,7 +75,7 @@ export type WhitchToolsSelectedType = keyof typeof IDS
 
 export type ShapsToolType = typeof shapsToolsIds[number];
 
-export interface AppInitialState {
+export interface AppState {
   isDrawing: boolean;
   whitchToolsSelected:WhitchToolsSelectedType; 
   tools: ToolsState;
@@ -104,3 +99,14 @@ export interface AppActions {
     isFilledShape?: boolean;
   }
 }
+
+
+export interface AppActions {
+    event: React.MouseEvent<HTMLCanvasElement> | React.TouchEvent<HTMLCanvasElement>,
+    isFilledShape: boolean, 
+    ctx: CanvasRenderingContext2D,  
+    prevMouseX: number,             
+    prevMouseY: number  
+}
+
+export type CursorIds = "firstPen" | "secondPen" | "thirdPen" | "highlighter" | "eraser"

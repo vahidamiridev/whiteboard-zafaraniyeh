@@ -5,21 +5,19 @@ import Whiteboards from "./components/Whiteboards/Whiteboards";
 import { actionTypes } from "./assets/constants";
 import { addDispatch } from "./utils/helper";
 import useAppInitialStateContext from "./hooks/useAppInitialStateContext";
-import useAppDispatchContext from "./hooks/useAppDispatchContext";
 import useAppStateContext from "./hooks/useAppStateContext";
 
-const App:React.FC = () => {
+const App: React.FC = () => {
+  const canvasRef = React.useRef<HTMLCanvasElement | null>(null);
+  const bgCanvasRef = React.useRef<HTMLCanvasElement | null>(null);
+  const inputImageRef = React.useRef<HTMLInputElement | null>(null);
 
-  const canvasRef = React.useRef<HTMLCanvasElement | null>(null)
-  const bgCanvasRef = React.useRef<HTMLCanvasElement | null>(null)
-  const inputImageRef = React.useRef<HTMLInputElement | null>(null)
-  
-  const appState = useAppStateContext()
+  const appState = useAppStateContext();
   const { configState, dispatchConfigState } = useAppInitialStateContext();
 
-
   React.useEffect(() => {
-    if (inputImageRef && canvasRef && bgCanvasRef) {
+
+    if (inputImageRef.current && canvasRef.current && bgCanvasRef.current) {
       addDispatch(dispatchConfigState, actionTypes.INITIAL_CONFIG_STATES, {
         canvasRef,
         bgCanvasRef,
@@ -34,6 +32,6 @@ const App:React.FC = () => {
       <Whiteboards bgCanvasRef={bgCanvasRef} canvasRef={canvasRef} />
     </Layout>
   );
-}
+};
 
 export default App;

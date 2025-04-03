@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { AppInitialStateContext } from "../contexts/AppContextProvider";
 
-export default function useAppInitialStateContext  (){
+export default function useAppInitialStateContext ():AppInitialStateContext{
   const context = useContext(AppInitialStateContext);
 
   if (!context)

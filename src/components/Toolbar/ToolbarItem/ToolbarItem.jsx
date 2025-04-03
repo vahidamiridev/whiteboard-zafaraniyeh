@@ -9,7 +9,7 @@ export default function ToolbarItem({    dataAction,
   iconName,
   subMenuItems,
   type,
-  inputImageRef,}) {
+  inputImageRef}) {
 const appState = useAppStateContext()
 
   return (
@@ -23,9 +23,10 @@ const appState = useAppStateContext()
           hidden
           data-action={dataAction}
           data-menu={hasSubmenu}
+          ref={type === "file" ? inputImageRef : null}
         />
         {hasSubmenu && <SubMenu id={iconId} subMenuItems={subMenuItems} />}
-        <label htmlFor={iconId} ref={type === "file" ? inputImageRef : null}>
+        <label htmlFor={iconId} >
           <i className={`fas ${iconName}`} />
         </label>
       </ToolbarItemStyled_li>

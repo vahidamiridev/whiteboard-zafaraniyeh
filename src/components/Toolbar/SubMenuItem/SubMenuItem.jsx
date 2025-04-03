@@ -39,8 +39,20 @@ export default function SubMenuItem({ subMenuItem }) {
       data-task={subMenuItem.dataTask}
       color={subMenuItem.dataColor}
       $pathIcon={subMenuItem.pathIcon}
-      min={[IDS.xGrid, IDS.yGrid, IDS.xyGrid].includes(appState.whitchToolsSelected) ? 30 : 3}
-      max={[IDS.xGrid, IDS.yGrid, IDS.xyGrid].includes(appState.whitchToolsSelected) ? 60 : 80}
+      min={
+        [IDS.xGrid, IDS.yGrid, IDS.xyGrid].includes(
+          appState.whitchToolsSelected
+        )
+          ? 30
+          : 3
+      }
+      max={
+        [IDS.xGrid, IDS.yGrid, IDS.xyGrid].includes(
+          appState.whitchToolsSelected
+        )
+          ? 60
+          : 80
+      }
       onChange={(e) => {
         const backgroundCanvasGridIds = [IDS.xGrid, IDS.yGrid, IDS.xyGrid];
         subMenuItem.type === "color" &&
@@ -51,11 +63,7 @@ export default function SubMenuItem({ subMenuItem }) {
 
         e.target.type === "range" &&
         backgroundCanvasGridIds.includes(appState.whitchToolsSelected)
-          ? gridHandlelr(
-              e.target.value,
-              appState,
-              configState
-            )
+          ? gridHandlelr(e.target.value, appState, configState)
           : e.target.type === "range" &&
             !backgroundCanvasGridIds.includes(appState.whitchToolsSelected)
           ? addDispatch(appDispatch, actionTypes.SET_SIZE_WITH_ID, {

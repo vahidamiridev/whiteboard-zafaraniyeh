@@ -1,8 +1,8 @@
-import {  AppActions, AppInitialState, ShapsToolType, Tool } from "interfaces";
+import {  AppActions, AppState, ShapsToolType, Tool } from "interfaces";
 import { actionTypes, IDS, shapsToolsIds } from "../assets/constants";
 
 
-export const appInitialState: AppInitialState = {
+export const appInitialState: AppState = {
   isDrawing: false,
   whitchToolsSelected: "firstPen",
   tools: {
@@ -69,7 +69,7 @@ export const appInitialState: AppInitialState = {
   },
 };
 
-export default function appReducer(state: AppInitialState, action: AppActions): AppInitialState {
+export default function appReducer(state: AppState, action: AppActions): AppState {
 
 
 
