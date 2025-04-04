@@ -89,9 +89,9 @@ export const setColoAndSizeBeforeDrow = (configState: ConfigState, appState: App
       [IDS.thirdPen]: tools.thirdPen,
       [IDS.highlighter]: tools.highlighter,
       [IDS.eraser]: { size: tools.eraser.size, color: "orange" }, // Eraser has fixed color
-      [IDS.rectAngle]: tools.shaps,
+      [IDS.rectangle]: tools.shaps,
       [IDS.straightLine]: tools.shaps,
-      [IDS.triAngle]: tools.shaps,
+      [IDS.triangle]: tools.shaps,
       [IDS.circle]: tools.shaps,
     };
 
@@ -250,10 +250,10 @@ export const movingPointerOnCanvas = (
       case IDS.circle:
         drawCircle({event, isFilledShape, ctx, prevMouseX, prevMouseY});
         break;
-      case IDS.rectAngle:
+      case IDS.rectangle:
         drawRectangle({event, isFilledShape, ctx, prevMouseX, prevMouseY});
         break;
-      case IDS.triAngle:
+      case IDS.triangle:
         drawTriangle({event, isFilledShape, ctx, prevMouseX, prevMouseY});
         break;
       case IDS.highlighter:

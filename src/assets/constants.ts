@@ -21,8 +21,8 @@ export const IDS = {
   shaps: "shaps",
   straightLine: "straightLine",
   circle: "circle",
-  triAngle: "triAngle",
-  rectAngle: "rectAngle",
+  triangle: "triangle",
+  rectangle: "rectangle",
   backgroundCanvas: "backgroundCanvas",
   xGrid: "xGrid",
   yGrid: "yGrid",
@@ -45,14 +45,14 @@ export const drawToolsIds = [
   IDS.eraser,
   IDS.straightLine,
   IDS.circle,
-  IDS.triAngle,
-  IDS.rectAngle,
+  IDS.triangle,
+  IDS.rectangle,
 ] as const
 export const shapsToolsIds = [
   IDS.straightLine,
   IDS.circle,
-  IDS.triAngle,
-  IDS.rectAngle,
+  IDS.triangle,
+  IDS.rectangle,
 ]as const
 export const backgroundCanvasToolsIds = [
   IDS.withoutGrid,
@@ -208,10 +208,10 @@ export const iconsInMainToolbar: ToolbarItemType[] = [
         dataTask: "straightLine",
       },
       {
-        id: "shaps-subMenu-rectAngle",
+        id: "shaps-subMenu-rectangle",
         type: "button",
         pathIcon: "../../public/shaps/rectangle.jpg",
-        dataTask: "rectAngle",
+        dataTask: "rectangle",
       },
       {
         id: "shaps-subMenu-circle",
@@ -220,7 +220,7 @@ export const iconsInMainToolbar: ToolbarItemType[] = [
         dataTask: "circle",
       },
       {
-        id: "shaps-subMenu-triAngle",
+        id: "shaps-subMenu-triangle",
         type: "button",
         pathIcon: "../../public/shaps/triangleW.png",
         dataTask: "triangle",

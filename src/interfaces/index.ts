@@ -107,6 +107,6 @@ export interface AppActions {
     prevMouseY: number  
 }
 
-export type CursorIds = "firstPen" | "secondPen" | "thirdPen" | "highlighter" | "eraser"
+export type CursorIds = "firstPen" | "secondPen" | "thirdPen" | "highlighter" | "eraser"| "rectangle"| "circle"|"triangle"|"straightLine"
 
 

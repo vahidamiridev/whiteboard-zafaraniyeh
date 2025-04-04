@@ -9,6 +9,10 @@ const cursorMap: Record<CursorIds, string> = {
   thirdPen: `url('/svg/pen.svg') 4 30, auto`,
   highlighter: `url('/svg/brush.svg') 4 30, auto`,
   eraser: `url('/svg/eraser.svg') 24 30, auto`,
+  rectangle: `url('/svg/rectangle.svg'),auto`,
+  circle: `url('/svg/circle.svg'),auto`,
+  straightLine: `url('/svg/straightLine.svg'),auto`,
+  triangle: `url('/svg/triangle.svg'),auto`,
 };
 
 interface WhiteboardsStyledProps {
