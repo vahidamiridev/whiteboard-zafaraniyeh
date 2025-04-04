@@ -8,9 +8,9 @@ import useAppInitialStateContext from "./hooks/useAppInitialStateContext";
 import useAppStateContext from "./hooks/useAppStateContext";
 
 const App: React.FC = () => {
-  const canvasRef = React.useRef<HTMLCanvasElement | null>(null);
-  const bgCanvasRef = React.useRef<HTMLCanvasElement | null>(null);
-  const inputImageRef = React.useRef<HTMLInputElement | null>(null);
+  const canvasRef = React.useRef<HTMLCanvasElement >(null!);
+  const bgCanvasRef = React.useRef<HTMLCanvasElement >(null!);
+  const inputImageRef = React.useRef<HTMLInputElement >(null!);
 
   const appState = useAppStateContext();
   const { configState, dispatchConfigState } = useAppInitialStateContext();

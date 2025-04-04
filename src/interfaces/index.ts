@@ -6,9 +6,9 @@ export type ConfigAction =
   | { 
       type: typeof actionTypes.INITIAL_CONFIG_STATES; 
       payload: { 
-        canvasRef: React.RefObject<HTMLCanvasElement |null>; 
-        bgCanvasRef: React.RefObject<HTMLCanvasElement |null>; 
-        inputImageRef: React.RefObject<HTMLInputElement |null>; 
+        canvasRef: React.RefObject<HTMLCanvasElement >; 
+        bgCanvasRef: React.RefObject<HTMLCanvasElement >; 
+        inputImageRef: React.RefObject<HTMLInputElement >; 
       } 
     }
  export interface SnapShotAction{ 

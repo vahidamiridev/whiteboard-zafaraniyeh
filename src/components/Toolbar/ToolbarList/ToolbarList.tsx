@@ -13,7 +13,10 @@ import useAppDispatchContext from "../../../hooks/useAppDispatchContext";
 import { gridHandlelr, saveImageHandler } from "../../../utils/mainLogic";
 import useAppInitialStateContext from "../../../hooks/useAppInitialStateContext";
 import useAppStateContext from "../../../hooks/useAppStateContext";
-import { ToolbarListProps } from "interfaces/propsTyps";
+ interface ToolbarListProps{
+  inputImageRef:React.RefObject<HTMLInputElement> 
+}
+
 
 
  const ToolbarList : React.FC<ToolbarListProps> = ({ inputImageRef }) : JSX.Element => {
