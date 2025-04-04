@@ -52,8 +52,8 @@ export const getCurrentCoordinates = (event: React.MouseEvent | React.TouchEvent
   let currentX: number;
   let currentY: number;
 
-  if (event instanceof TouchEvent) {
-
+  const nativeEvent = event.nativeEvent;
+  if (nativeEvent instanceof TouchEvent) {
     const touchEvent = event.nativeEvent as TouchEvent;
     const result = getXYWhenTouched(touchEvent);
     currentX = result.x;
@@ -78,52 +78,35 @@ export const setSourceOver = (ctx:CanvasRenderingContext2D): void => {
 export const setDestinationOut = (ctx:CanvasRenderingContext2D) :void=> {
   ctx.globalCompositeOperation = "destination-out"; //for eraser
 };
-export const setColoAndSizeBeforeDrow = (configState:ConfigState, appState:AppState): void => {
-  const { firstPen, secondPen, thirdPen, highlighter, shaps, eraser  } =
-    appState.tools;
-    const { ctx } = configState;
-    if(ctx ){
-      switch (appState.whitchToolsSelected) {
-        case IDS.firstPen:
-        ctx.lineWidth = firstPen.size;
-        ctx.strokeStyle = firstPen.color;
-        ctx.fillStyle = firstPen.color;
-        break;
-      case IDS.secondPen:
-        ctx.lineWidth = secondPen.size;
-        ctx.strokeStyle = secondPen.color;
-        ctx.fillStyle = secondPen.color;
-        break;
-      case IDS.thirdPen:
-        ctx.lineWidth = thirdPen.size;
-        ctx.strokeStyle = thirdPen.color;
-        ctx.fillStyle = thirdPen.color;
-        break;
-      case IDS.highlighter:
-        ctx.lineWidth = highlighter.size;
-        ctx.strokeStyle = highlighter.color;
-        ctx.fillStyle = highlighter.color;
-        break;
-      case IDS.eraser:
-        ctx.lineWidth = eraser.size;
-        ctx.strokeStyle = "orange"; //when use highlighter and then use eraser ,eraser get color from highlighter with alpha and
-        ctx.fillStyle = "orange"; /// to fix this bug just set a color such az evry color and dont draw
-        break;
-  
-      case IDS.rectAngle:
-      case IDS.straightLine:
-      case IDS.triAngle:
-      case IDS.circle:
-        ctx.lineWidth = shaps.size;
-        ctx.strokeStyle = shaps.color;
-        ctx.fillStyle = shaps.color;
-        break;
-  
-      default:
-        throw "this is error about setColoAndSizeBeforeDrow";
+export const setColoAndSizeBeforeDrow = (configState: ConfigState, appState: AppState): void => {
+  const { tools } = appState;
+  const { ctx } = configState;
+
+  if (ctx) {
+    const toolSettings = {
+      [IDS.firstPen]: tools.firstPen,
+      [IDS.secondPen]: tools.secondPen,
+      [IDS.thirdPen]: tools.thirdPen,
+      [IDS.highlighter]: tools.highlighter,
+      [IDS.eraser]: { size: tools.eraser.size, color: "orange" }, // Eraser has fixed color
+      [IDS.rectAngle]: tools.shaps,
+      [IDS.straightLine]: tools.shaps,
+      [IDS.triAngle]: tools.shaps,
+      [IDS.circle]: tools.shaps,
+    };
+
+    const selectedTool = toolSettings[appState.whitchToolsSelected];
+
+    if (selectedTool) {
+      ctx.lineWidth = selectedTool.size;
+      ctx.strokeStyle = selectedTool.color;
+      ctx.fillStyle = selectedTool.color;
+    } else {
+      throw new Error("Invalid tool selected in setColoAndSizeBeforeDrow");
     }
-    }
+  }
 };
+
 
 
 
@@ -201,7 +184,6 @@ export const startLeftClickOnCanvas = (
   dispatchConfigState,
   appDispatch}:ClickStart
 ):void => {
-  
   if (drawToolsIds.includes(appState.whitchToolsSelected as typeof drawToolsIds[number]) && configState.ctx) {
     configState.ctx.beginPath(); // just for handel drawFreeHandLine
     addDispatch(appDispatch, actionTypes.SET_IS_DRAWING_TRUE  );

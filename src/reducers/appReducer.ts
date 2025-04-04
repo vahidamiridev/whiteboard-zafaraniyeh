@@ -49,7 +49,7 @@ export const appInitialState: AppState = {
       mouseUpPosition: { x: 0, y: 0 },
     },
     backgroundCanvas: {
-      color: "#ffffff",
+      color: "#556b2f",
       size: "30",
       isActive: false,
     },

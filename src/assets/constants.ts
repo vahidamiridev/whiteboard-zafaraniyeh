@@ -87,9 +87,9 @@ export const iconsInMainToolbar: ToolbarItemType[] = [
       { id: "firstPen-subMenu-#FF0000", type: "button", dataColor: "#FF0000" },
       { id: "firstPen-subMenu-#000000", type: "button", dataColor: "#000000" },
       {
-        id: "firstPen-subMenu-#FFFF00",
+        id: "firstPen-subMenu-#ffd700",
         type: "button",
-        dataColor: "#FFFF00",
+        dataColor: "#ffd700",
       },
       {
         id: "firstPen-subMenu-setcolor",
@@ -111,9 +111,9 @@ export const iconsInMainToolbar: ToolbarItemType[] = [
       { id: "secondPen-subMenu-#FF0000", type: "button", dataColor: "#FF0000" },
       { id: "secondPen-subMenu-#000000", type: "button", dataColor: "#000000" },
       {
-        id: "secondPen-subMenu-#FFFF00",
+        id: "secondPen-subMenu-#ffd700",
         type: "button",
-        dataColor: "#FFFF00",
+        dataColor: "#ffd700",
       },
       {
         id: "secondPen-subMenu-setcolor",
@@ -135,9 +135,9 @@ export const iconsInMainToolbar: ToolbarItemType[] = [
       { id: "thirdPen-subMenu-#FF0000", type: "button", dataColor: "#FF0000" },
       { id: "thirdPen-subMenu-#000000", type: "button", dataColor: "#000000" },
       {
-        id: "thirdPen-subMenu-#FFFF00",
+        id: "thirdPen-subMenu-#ffd700",
         type: "button",
-        dataColor: "#FFFF00",
+        dataColor: "#ffd700",
       },
       {
         id: "thirdPen-subMenu-setcolor",
@@ -162,7 +162,7 @@ export const iconsInMainToolbar: ToolbarItemType[] = [
         type: "button",
         dataColor: "#36454F",
       },
-      { id: "highlighter-subMenu-#FFFF00", type: "button", dataColor: "#FFFF00" },
+      { id: "highlighter-subMenu-#ffd700", type: "button", dataColor: "#ffd700" },
       { id: "highlighter-subMenu-setcolor", type: "color", nameIcon: "fa-pen" },
       { id: "highlighter-subMenu-range", type: "range"},
     ],
@@ -234,14 +234,14 @@ export const iconsInMainToolbar: ToolbarItemType[] = [
     id: "backgroundCanvas",
     subMenuItems: [
       {
-        id: "backgroundCanvas-subMenu-#36454F",
+        id: "backgroundCanvas-subMenu-#252525",
         type: "button",
-        dataColor: "#36454F",
+        dataColor: "#252525",
       },
       {
-        id: "backgroundCanvas-subMenu-#074205",
+        id: "backgroundCanvas-subMenu-#556b2f",
         type: "button",
-        dataColor: "#074205",
+        dataColor: "#556b2f",
       },
       {
         id: "backgroundCanvas-subMenu-#efefef",
@@ -285,14 +285,14 @@ export const iconsInMainToolbar: ToolbarItemType[] = [
   {
     id: "moveImage",
     hasSubMenu: false,
-    name: "fa-hand",
+    name: "fa-redo",
     type: "button",
     dataAction: "OPERATION",
   },
   {
     id: "insertImage",
     hasSubMenu: false,
-    name: "fa-image",
+    name: "fa-refresh",
     type: "file",
     dataAction: "OPERATION",
   },
