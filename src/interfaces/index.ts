@@ -63,12 +63,10 @@ export interface ToolsState {
   };
 }
 
-export interface ImageState {
-  image: any[];
+export interface Undo {
+  imageData: ImageData[];
   isActive: boolean;
-  isLoading: boolean;
-  mouseDownPosition: Position;
-  mouseUpPosition: Position;
+
 }
 
 export type WhitchToolsSelectedType = keyof typeof IDS
@@ -79,8 +77,8 @@ export interface AppState {
   isDrawing: boolean;
   whitchToolsSelected:WhitchToolsSelectedType; 
   tools: ToolsState;
-  moveImage: ImageState;
-  insertImage: {
+  undo: Undo;
+  refresh: {
     isActive: boolean;
   };
   saveImage: {

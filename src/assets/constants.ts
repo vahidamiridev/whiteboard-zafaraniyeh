@@ -283,14 +283,14 @@ export const iconsInMainToolbar: ToolbarItemType[] = [
     type: "checkbox",
   },
   {
-    id: "moveImage",
+    id: "undo",
     hasSubMenu: false,
-    name: "fa-redo",
+    name: "fa-undo",
     type: "button",
     dataAction: "OPERATION",
   },
   {
-    id: "insertImage",
+    id: "refresh",
     hasSubMenu: false,
     name: "fa-refresh",
     type: "file",

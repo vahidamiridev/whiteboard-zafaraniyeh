@@ -54,14 +54,11 @@ export const appInitialState: AppState = {
       isActive: false,
     },
   },
-  moveImage: {
-    image: [],
+  undo: {
+    imageData: [],
     isActive: false,
-    isLoading: false,
-    mouseDownPosition: { x: 0, y: 0 },
-    mouseUpPosition: { x: 0, y: 0 },
   },
-  insertImage: {
+  refresh: {
     isActive: false,
   },
   saveImage: {

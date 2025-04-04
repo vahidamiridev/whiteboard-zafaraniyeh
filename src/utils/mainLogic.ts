@@ -269,6 +269,8 @@ export const movingPointerOnCanvas = (
 };
 
 export const mouseUpHandler = ({event, appDispatch}:MouseUp) => {
+  
+
   const { currentX, currentY } = getCurrentCoordinates(event);
   addDispatch(appDispatch, actionTypes.SET_IS_DRAWING_FALSE);
   addDispatch(appDispatch, actionTypes.SET_MOUSE_UP_POSITION, {
@@ -336,4 +338,9 @@ if(dataUrl){
 }   else {
   console.error("Canvas is not available or toDataURL() failed- Save failed ");
 }
+}
+
+
+export const undoHandler= (appState:AppState , configStat:ConfigState):void=>{
+
 }
