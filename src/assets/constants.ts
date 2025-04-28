@@ -96,7 +96,7 @@ export const iconsInMainToolbar: ToolbarItemType[] = [
       {
         id: "firstPen-subMenu-setcolor",
         type: "color",
-        pathIcon: "../../public/shaps/triangleW.png",
+        pathIcon: "/shaps/triangleW.png",
       },
       { id: "firstPen-subMenu-range", type: "range"},
     ],
@@ -204,25 +204,25 @@ export const iconsInMainToolbar: ToolbarItemType[] = [
       {
         id: "shaps-subMenu-straightLine",
         type: "button",
-        pathIcon: "../../public/shaps/line.png",
+        pathIcon: "/shaps/line.png",
         dataTask: "straightLine",
       },
       {
         id: "shaps-subMenu-rectangle",
         type: "button",
-        pathIcon: "../../public/shaps/rectangle.jpg",
+        pathIcon: "/shaps/rectangle.jpg",
         dataTask: "rectangle",
       },
       {
         id: "shaps-subMenu-circle",
         type: "button",
-        pathIcon: "../../public/shaps/circle.jpg",
+        pathIcon: "/shaps/circle.jpg",
         dataTask: "circle",
       },
       {
         id: "shaps-subMenu-triangle",
         type: "button",
-        pathIcon: "../../public/shaps/triangleW.png",
+        pathIcon: "/shaps/triangleW.png",
         dataTask: "triangle",
       },
       { id: "shaps-subMenu-fillOrEmpty", type: "checkbox" },
@@ -253,25 +253,25 @@ export const iconsInMainToolbar: ToolbarItemType[] = [
       {
         id: "backgroundCanvas-subMenu-withoutGrid",
         type: "button",
-        pathIcon: "../../public/shaps/png-clipart-computer-icons-logo-forbidden-angle-trademark.png",
+        pathIcon: "/shaps/png-clipart-computer-icons-logo-forbidden-angle-trademark.png",
         dataTask: "withoutGrid",
       },
       {
         id: "backgroundCanvas-subMenu-xGrid",
         type: "button",
-        pathIcon: "../../public/shaps/X_G.png",
+        pathIcon: "/shaps/X_G.png",
         dataTask: "xGrid",
       },
       {
         id: "backgroundCanvas-subMenu-yGrid",
         type: "button",
-        pathIcon: "../../public/shaps/Uppercase_letter_Y.png",
+        pathIcon: "/shaps/Uppercase_letter_Y.png",
         dataTask: "yGrid",
       },
       {
         id: "backgroundCanvas-subMenu-xyGrid",
         type: "button",
-        pathIcon: "../../public/shaps/there-is-a-square-grid-icon-11553469575pcofsssmjf.png",
+        pathIcon: "/shaps/there-is-a-square-grid-icon-11553469575pcofsssmjf.png",
         dataTask: "xyGrid",
       },
       {

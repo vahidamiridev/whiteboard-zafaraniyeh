@@ -1,4 +1,3 @@
-import React from "react";
 import { actionTypes, drawToolsIds, IDS, shapsToolsIds, } from "../assets/constants";
 import { addDispatch } from "./helper";
 import { AppState, ConfigState } from "interfaces";
@@ -53,7 +52,7 @@ export const getCurrentCoordinates = (event: React.MouseEvent | React.TouchEvent
   let currentY: number;
 
   const nativeEvent = event.nativeEvent;
-  if (nativeEvent instanceof TouchEvent) {
+  if (typeof TouchEvent !== 'undefined' && nativeEvent instanceof TouchEvent) {
     const touchEvent = event.nativeEvent as TouchEvent;
     const result = getXYWhenTouched(touchEvent);
     currentX = result.x;
