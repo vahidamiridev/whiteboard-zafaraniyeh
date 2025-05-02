@@ -1,12 +1,39 @@
-# React + Vite
+# 🖊️ Zafaraniyeh Interactive Whiteboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web-based interactive whiteboard tool built with React + TypeScript – ideal for teaching, note-taking, and creative collaboration.
 
-Currently, two official plugins are available:
+🔗 [Live Demo](https://whiteboard.zafaraniyehtvto.ir)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🎯 Features (Current)
 
-## Expanding the ESLint configuration
+- ✏️ **Freehand drawing** with customizable **pen color** and **size**
+- 🖍️ **Highlighter** mode for emphasis
+- 🧽 **Eraser** tool
+- 🎨 **Whiteboard background color** settings
+- 🟩 **Grid lines** (horizontal and vertical)
+- 📐 **Draw geometric shapes** – filled or outlined
+- 💾 **Auto-saving** canvas state (localStorage)
+- 🌈 **Color palette** for easy selection
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛣️ Upcoming Features
+
+- 🖼️ **Image insertion** and **drag & drop positioning**
+- 🔄 **Undo / Redo** actions
+- 🧼 **Clear all** button to reset the board
+
+## 🛠️ Tech Stack
+
+- **React + TypeScript**
+- **Context API + useReducer** – for managing tools and actions
+- **Tailwind CSS** – for a clean and responsive UI
+- **Canvas API** – for all drawing functionalities
+- **Figma** – UI design and planning
+
+## 🚀 Getting Started (Development)
+
+```bash
+git clone https://github.com/vahidamiridev/zafaraniyehtvto.git
+cd zafaraniyehtvto
+# If it's in a subfolder like /apps/whiteboard, cd into it
+npm install
+npm run dev
